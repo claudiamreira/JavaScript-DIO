@@ -1,0 +1,52 @@
+ORIENTAÇÃO A OBJETOS
+
+Paradigmas: Os programas são "objetos" que possuem uma série de proprie-
+dades. obj: (pessoa) com caracteristicas: (altura, etnia, cor_do_cabelo,
+idade, etc).
+
+Pilares: 
+- Herança: O objeto filho herda propriedades e métodos do objeto pai.
+
+- Polimorfismo: Objetos podem herdar a mesma classe pai, mas se comporta-
+rem de forma diferente quando invocamos seus métodos.
+
+- Encapsulamento: Cada classe tem propriedades e métodos independentes
+dos restante do código.
+
+- Abstração: Processo mental que consiste em isolar um aspecto determinado
+de um estado de coisas relativamente complexo, a fim de simplificar a
+sua avaliação, classificação ou para permitir a comunicaçãi ou para per-
+mitir a comunicação do mesmo.
+ 
+Existem dois paradigmas:
+Imperativo: foca em como vai resolver os problemas. (OO)
+Declarativo: o que vai fazer. (SQL)
+
+OOJS (JavaScript orientada a objetos)
+Protótipos (prototype):
+Todos os objetos JavaScript herdam propriedades e métodos de um prototype
+O objeto Object.prototype está no todo desta cadeia.
+
+Cadeia de protótipos (prototype chain)
+***imagem no celular***
+
+Classes
+Syntatic sugar: uma sintaxe feita para facilitar a escrita
+
+   class Meal{
+	constructor (food) {
+		this.food = food
+   }
+   eat () {
+	return ':p"
+   }
+ }
+
+JavaScript não possui classes nativamente. Todas as classes são objetos
+e a herança se da por propótipos
+- construtor
+- getter e setter
+- super ()
+- método
+
+obs: sempre que um valor tiver getter e setter precisa ter o _ na frente

@@ -1,0 +1,78 @@
+Utilizando Módulos
+
+
+- O que são módulos:
+Módulos arquivos Javascript que tem a capacidade de exportar e importar
+informações de outros arquivos do mesmo tipo.
+Algumas vantagens são:
+- Organização do código
+- Compartilhamento de variáveis em escopos diferentes
+- Explicita as dependências dos arquivos. 
+
+**EXPORTAR Named exports 
+ex:
+export function mostraIdades(pessoa) {
+	return `A idade de $(pessoa.nome) é $(pessoa.idade)`;
+ }
+e
+function mostraIdade(pessoa) {
+	return `A idade de $(pessoa.nome) é $(pessoa.idade)`;
+}
+export{
+	mostraIdade
+}
+
+**EXPORTAR Default exports
+- Só pode haver um por arquivo
+- Será o retorno padrão de seu arquivo
+
+**IMPORTAR Named exports
+import {funcao, variavel, classe} from "./arquivo.js'
+
+**IMPORTAR Default exports
+import valorDefault from './arquivo.js'
+
+**Trocando nome de imports
+import { arquivo as Apelido } from './arquivo,js';	
+Apelido.metodo();
+
+**Importando todos os dados de um arquivo
+import * as INFOS from './arquivo.js';
+INFOS.metodoA();
+console.log(INFOS.variavel);
+
+**Vinculando ao HTML
+<script type="modulo" src="./main.js"></script>
+
+***Para fazer testes localmente (de um arquivo no seu computador), será
+necessário estar rodando um servidor. Isso pode ser feito utilizando a
+extensão "Live Server", do VSCode
+
+CURIOSIDADES:
+- Módulos sempre estão em "strict mode"
+- Podem ser utilizadas as extenções .js e .mjs
+- Para testes locais, é necessário utilizar um servidor
+- Ao importar, sempre lembre da extensão (.js, .mjs)
+- Ao importar, sempre utilize "./" como ponto de partida
+
+Module Cheatsheet:
+Name export				   				              Name import
+export const name = 'value'		               import { name } from '...'
+
+Default export								              Default import
+export default 'value'					              import anyName from '...'
+
+Rename export							                 Rename import
+export { name as newName } 		           import { newName } from '...'
+
+Export list + Rename			                        Import list + Rename
+export {				                                           import {
+	name1,					                                    name1 as newName1,
+	name2 as newName2			                   newName2
+ }					                                                    } from '...'
+
+****Procurar e estudar sobre strict mode.
+
+
+
+Obs: para módulos quando estamos importando indicamos o caminho com "./"

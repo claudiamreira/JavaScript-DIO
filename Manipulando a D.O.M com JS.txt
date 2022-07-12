@@ -1,0 +1,127 @@
+<p>Entendendo o D.O.M
+O que é DOM (Document Object Model):
+O DOM HTML é um padrão de como acessar e modificar os elementos HTML de uma
+página.
+*Todos os browser possui esse padrão.
+
+****Imagem na galeria do cel
+
+DOM vs BOM	
+BOM (Browser Object Model)
+Tudo que está dentro do objeto window.
+
+****Imagem na galeria do cel
+
+<p>Selecionando elementos
+Métodos:
+- Estrutura HTML
+tag -> body (corpo da página)
+id -> atributo de identificador único
+classe -> identificadores não únicos
+
+- Selecionando os elementos de uma página
+ex:
+document.getElementById('titulo');
+//h1 id="titulo">Minha página</h1>
+
+document.getElementsByTagName('li');
+// retorna um array, pois são vários elementos
+[ 
+	<li>Projeto1</li>
+	<li>Projeto2</li>
+	<li>Projeto3</i>
+]
+
+document.getElementsByClassName('textos');
+[ 
+	<section class="textos">
+	   <h2>Sobre mim</h2>
+	   <p>Texto sobre a pessoa aqui.</p>
+	</section>,
+
+	<section class="textos">
+	   <h2>Meus projetos</h2>
+	   <ul>
+	      <li>Projeto1</li>
+	      <li>Projeto2</li>
+	      <li>Projeto3</li>
+	   </ul>
+	</section>
+]
+
+document.querySelectorAll('.primeira-classe .segunda-classe');
+// também retorna um array
+// retorna os elementos das duas classes
+// classes são representadas pelo '.' antes de informar o nome da classe
+// se fosse ID seria representado por # antes de informar o nome do id
+
+document.querySelectorAll('li .opcao');
+// busca combinando tag e classe
+
+
+ADICIONAR E DELETAR
+Método:
+document.createElement(element) - cria um novo elemento HTML
+document.removeChild(element) - remove um elemento
+document.appendChilde(element) - adiciona um elemento
+document.replaceChild(new, old) - substitui um elemento
+
+
+<p>Trabalhando com estilos
+
+Classes:
+Element.classList - representa a lista de classes (propriedade do elemento)
+
+ex:
+<div id="meu-elemento" class="classe">
+	<!-- resto do código aqui -->
+</div>
+
+const meuElemento = document.getElementById("meu-elemento")
+
+meuElemento.classList.add("novo estilo");
+//adiciona a classe "meu estilo"
+
+meuElemento.classList.remove("classe")
+//remove a classe "classe"
+
+meuElemento.classList.toggle("dark-mode")
+//adiciona a classe "dark-mode" caso ela não fala parte da lista e remove ela caso faça.
+
+...
+<div id="meu-elemento" class="novo-estilo dark-mode">
+	<!-- resto do código aqui -->
+</div>
+
+CSS
+Acessando diretamente o CSS de um elemento 
+ex: quando não tem um arquivo .css e quer fazer direto pelo JS é a seguinte sintaxe 
+document.getElementsByTagName("p").style.color = "blue";
+
+<p>Eventos
+Tipos e acionando eventos
+(qualquer tipo de ação que o usuário faz na página web)
+
+tipos:
+Eventos do mouse: mouseover, mouseout
+Eventos de clique: click, dbclick
+Eventos de atualização: change, load
+
+Event listener
+Diretamente no Javascript, cria um evento que vai ser acionado no momento em que
+o usuário realizar determinada ação
+
+ex:
+const botao = document.getElementByID("meuBotao");
+botao.addEventListener("click", outraFuncao);
+
+Atributo HTML
+Especifica a função a ser chamada diretamente no elemento HTML.
+
+<h1 onclick="mudaTexto(this)"Clique aqui!</h1>
+<script>
+	function mudaTexto(id){
+	   id.innerHTML = "Mudei!";
+	}
+</script>
+
